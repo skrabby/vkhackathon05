@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.vezdekod.donate.ui.StartFragment"
+        android:label="StartFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_paymentTypeFragment"
+            app:destination="@id/paymentTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentTypeFragment"
+        android:name="com.vezdekod.donate.ui.PaymentTypeFragment"
+        android:label="fragment_payment_type"
+        tools:layout="@layout/fragment_payment_type" >
+        <action
+            android:id="@+id/action_paymentTypeFragment_to_paymentCreationFragment"
+            app:destination="@id/paymentCreationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentCreationFragment"
+        android:name="com.vezdekod.donate.ui.PaymentCreationFragment"
+        android:label="fragment_payment_creation"
+        tools:layout="@layout/fragment_payment_creation" >
+        <argument
+            android:name="paymentType"
+            app:argType="com.vezdekod.donate.model.PaymentType" />
+    </fragment>
+</navigation>

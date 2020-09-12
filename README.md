@@ -1,0 +1,1 @@
+# vezdekod donate.mobile
